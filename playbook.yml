@@ -1,0 +1,4 @@
+- hosts: SQL
+  tasks:
+    - name: Test ping
+      win_ping:
