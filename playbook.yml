@@ -2,3 +2,13 @@
   tasks:
     - name: Test ping
       win_ping:
+      
+    - name: requet SQL
+      win_shell: "invoke-sqlcmd -username \"administrateur\" -password \"Azertyuiop123\" -Query \"SELECT TOP (1000) [id], [nom], [prenom], [age] FROM [user].[dbo].[Table_1]" | Select-Object * -ExcludeProperty ItemArray, Table, RowError, RowState, HasErrors | ConvertTo-Json"
+      register: response
+
+    - set_fact:
+      ids: "{{ response.stdout|from_json}}"
+
+    - debug:
+      var: ids
