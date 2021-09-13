@@ -7,8 +7,5 @@
       script: sql.ps1
       register: response
 
-    - set_fact:
-      ids: "{{ response.stdout|from_json}}"
-
     - debug:
-      var: ids
+      var: response
