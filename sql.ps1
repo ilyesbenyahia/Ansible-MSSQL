@@ -5,4 +5,4 @@ $Username = "sa"
 $Password = "Azertyuiop123"
 $sqlCmd = Invoke-SQLCmd -ServerInstance $Server -Database $Database -ConnectionTimeout 300 -QueryTimeout 600 -Query $Query -Username $Username -Password $Password 
 $res = Select-Object $sqlCmd -ExcludeProperty ItemArray, Table, RowError, RowState, HasErrors 
-$res.ExitJson()
+$res ConvertTo-Json
