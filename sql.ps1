@@ -1,0 +1,1 @@
+Invoke-Sqlcmd -Query "SELECT TOP (1000) [id], [nom], [prenom], [age]  FROM [user].[dbo].[Table_1]" -ServerInstance "WS-SQL\SQLEXPRESS" | Select-Object * -ExcludeProperty ItemArray, Table, RowError, RowState, HasErrors | ConvertTo-Json
