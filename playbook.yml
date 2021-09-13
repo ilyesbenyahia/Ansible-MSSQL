@@ -7,5 +7,6 @@
       script: sql.ps1
       register: response
 
-    - debug:
-      var: response
+    - name: debug sql
+      debug:
+        var: response
