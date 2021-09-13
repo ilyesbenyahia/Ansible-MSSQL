@@ -1,9 +1,11 @@
 #!powershell
 
+
 #Requires -Module Ansible.ModuleUtils.Legacy
 #AnsibleRequires -OSVersion 6.2
 #AnsibleRequires -CSharpUtil Ansible.Basic
 
+using Ansible.Become;
 
 $Server = 'WS-SQL\SQLEXPRESS'
 $Database = 'user'
