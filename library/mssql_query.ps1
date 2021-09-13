@@ -1,3 +1,10 @@
+#!powershell
+
+#Requires -Module Ansible.ModuleUtils.Legacy
+#AnsibleRequires -OSVersion 6.2
+#AnsibleRequires -CSharpUtil Ansible.Basic
+
+
 $Server = 'WS-SQL\SQLEXPRESS'
 $Database = 'user'
 $Query = 'SELECT TOP (1000) [id], [nom], [prenom], [age]  FROM [user].[dbo].[Table_1]'
