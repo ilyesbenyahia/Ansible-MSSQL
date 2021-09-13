@@ -10,3 +10,6 @@
     - name: debug sql
       debug:
         var: response
+        
+    - name: module ps
+      mssql_query:
